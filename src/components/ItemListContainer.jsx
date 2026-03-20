@@ -1,7 +1,11 @@
-const ItemListContainer = ()=> {
+const ItemListContainer = ({greeting, saludo})=> {
+    // console.log(props)
+    // const {greeting, saludo}=props
+    console.log('ItemListContainer')
     return(
         <div>
-            <h1>Hola soy un componente</h1>
+            <h1>{greeting}</h1>
+            <h2>{saludo}</h2>
         </div>
     )
 }
