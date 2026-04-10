@@ -50,3 +50,17 @@ export const getProducts = ()=> {
     }
     )
 }
+export const getOneProduct = (id)=> {
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            if(error){
+                reject('No hay data')
+            }else{
+                // resolve(productos[0])
+                let prod= productos.find((prd)=> prd.id === id)
+                resolve(prod)
+            }
+        },3000)
+    }
+    )
+}

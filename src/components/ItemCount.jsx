@@ -1,14 +1,17 @@
 
 import {useState} from "react"
 
-const ItemCount = ()=> {
+const ItemCount = ({stock})=> {
     
     const [count, setCount]=useState(1)
   
 
 
     const sumar = ()=>{
-        setCount(count + 1)
+        if(count < stock){
+
+            setCount(count + 1)
+        }
     }
      const restar = ()=>{
         if(count > 0){

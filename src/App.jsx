@@ -1,18 +1,24 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import ItemListContainer from "./components/ItemListContainer"
-import Navbar from "./components/Navbar"
 import NavBarRB from './components/NavBarRB';
 import ItemCount from './components/ItemCount';
-import DinamicComponent from './examples/DinamicComponent';
-import ComponentWithChildren from './examples/ComponentWithChildren';
+import ComponentFetch from './examples/ComponentFetch';
+import { withLogging } from './hocs/withLogging';
+import ItemDetailContainer from './components/ItemDetailContainer';
+
 function App() {
  console.log('App')
+
+//  const ItemListContHOC = withLogging(ItemListContainer)
   return (
     <div>
       <NavBarRB/>
+      {/* <ComponentFetch/> */}
+      {/* <ItemListContHOC saludo="Hola soy una prop" greeting='Bienvenidos a mi Shop!'/> */}
      <ItemListContainer saludo="Hola soy una prop" greeting='Bienvenidos a mi Shop!'/>
-      <ItemCount/>
+     <ItemDetailContainer/>
+      {/* <ItemCount/> */}
     </div>
   )
 }

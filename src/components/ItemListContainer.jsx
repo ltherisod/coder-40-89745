@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { getProducts } from "../mock/asyncData"
 import ItemList from "./ItemList"
+import { withLogging } from "../hocs/withLogging"
 const ItemListContainer = ({greeting, saludo})=> {
     //1. Decalra un estado para guardar la data de la promse
     const [data, setData]= useState([])
@@ -16,12 +17,13 @@ const ItemListContainer = ({greeting, saludo})=> {
      console.log(data)
     
     console.log('ItemListContainer')
+    const ItemListHOC = withLogging(ItemList)
     return(
         <div>
             <h1>{greeting}</h1>
             <h2>{saludo}</h2>
             {/* {data.map((prod)=> <p key={prod.id}>{prod.name}</p>)} */}
-            <ItemList data={data}/>
+            <ItemListHOC data={data}/>
         </div>
     )
 }
