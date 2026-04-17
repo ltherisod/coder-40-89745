@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { getProducts } from "../mock/asyncData"
 import ItemList from "./ItemList"
 import { useParams } from "react-router-dom"
+import Input from "../examples/Input"
 const ItemListContainer = ({greeting, saludo})=> {
     
     const [data, setData]= useState([])
@@ -29,7 +30,7 @@ const ItemListContainer = ({greeting, saludo})=> {
     return(
         <div>
             <h1>{greeting}</h1>
-          
+            <Input/>
             <ItemList data={data}/>
         </div>
     )
