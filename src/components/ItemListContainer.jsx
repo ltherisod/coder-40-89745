@@ -30,7 +30,6 @@ const ItemListContainer = ({greeting, saludo})=> {
     return(
         <div>
             <h1>{greeting}</h1>
-            <Input/>
             <ItemList data={data}/>
         </div>
     )

@@ -6,6 +6,8 @@ import ItemCount from './components/ItemCount';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Error from './components/Error';
+//IMPORTAMOS AL PROVEEDOR PARA DAR PERMISOS PARA ACCEDER AL CONTEXTO 
+import { CartProvider } from './context/CartContext';
 
 function App() {
  console.log('App')
@@ -13,6 +15,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <CartProvider>
       <NavBarRB/> 
       <Routes>
         <Route path='/' element={<ItemListContainer saludo="Hola soy una prop" greeting='Bienvenidos a mi Shop!'/>}/>
@@ -20,6 +23,7 @@ function App() {
         <Route path='/item/:id' element={ <ItemDetailContainer/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>  
+    </CartProvider>
     </BrowserRouter>
   )
 }

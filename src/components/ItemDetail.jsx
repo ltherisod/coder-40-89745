@@ -1,9 +1,16 @@
 import React from 'react'
 import ItemCount from './ItemCount'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
+//PARA CONSULTAR/USAR UN CONTEXTO USO E IMPORTO 2 COSAS
+//1. EL HOOK DE CONTEXTO
+//2. EL CONTEXTO QUE QUIERO UTILIZAR
 
 const ItemDetail = ({detail}) => {
+  const {addItem} = useContext(CartContext)
+  
   const onAdd = (cantidad)=>{
-    alert(`Agregaste al carrito ${cantidad} de unidades de ${detail.name}`)
+   addItem(detail,cantidad )
   }
   return (
     <div style={{
