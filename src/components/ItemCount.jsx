@@ -23,7 +23,10 @@ const ItemCount = ({stock, onAdd})=> {
     onAdd(count)
   }
     return(
-         <div className="counter-container">
+        <>
+        {
+            stock > 0 
+            ?  <div className="counter-container">
             <div className="counter-controls">
 
             <button className="btn btn-danger" onClick={restar}>-</button>
@@ -31,8 +34,11 @@ const ItemCount = ({stock, onAdd})=> {
             <button className="btn btn-success" onClick={sumar}>+</button>
             </div>
             {/* <button  className="btn btn-primary buy-btn" onClick={()=>onAdd(count)}>Comprar</button> */}
-            <button  className="btn btn-primary buy-btn" onClick={comprar}>Comprar</button>
+            <button  className="btn btn-primary buy-btn" onClick={comprar} disabled={count === 0 || stock === 0}>Comprar</button>
         </div>
+        :<p>Lo sentimos, no hay stock disponible 😭</p>
+        }
+        </>
     )
 }
 

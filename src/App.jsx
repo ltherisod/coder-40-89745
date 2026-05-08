@@ -9,6 +9,7 @@ import Error from './components/Error';
 import { CartProvider } from './context/CartContext';
 import CartContainer from './components/CartContainer';
 import Checkout from './components/Checkout';
+import CheckoutRF from './components/CheckoutRF';
 
 function App() {
  console.log('App')
@@ -23,7 +24,7 @@ function App() {
          <Route path='/category/:type' element={<ItemListContainer  greeting='Estas en la categoría '/>}/>
         <Route path='/item/:id' element={ <ItemDetailContainer/>}/>
          <Route path='/cart' element={<CartContainer/>}/>
-         <Route path='/checkout' element={<Checkout/>}/>
+         <Route path='/checkout' element={<CheckoutRF/>}/>
         <Route path='*' element={<Error/>}/>
       </Routes>  
     </CartProvider>
